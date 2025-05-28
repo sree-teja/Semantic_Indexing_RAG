@@ -1,0 +1,54 @@
+### ✅ 1. **Implement File Type Expansion**
+
+**Goal:** Support a wider range of input document types beyond plain text or PDFs.
+
+* Add support for `.docx`, `.xlsx`, `.csv`, and HTML.
+* Use libraries like `python-docx`, `pandas`, and `beautifulsoup4` for parsing.
+* Auto-detect file type and apply the correct loader before vectorization.
+
+---
+
+### ✅ 2. **Integrate Advanced Chunking and Metadata Storage**
+
+**Goal:** Improve semantic search accuracy and context relevance.
+
+* Implement hierarchical or adaptive chunking based on section headers or semantic similarity.
+* Store metadata like section titles, page numbers, and timestamps alongside embeddings.
+* Display source metadata in query responses to enhance traceability.
+
+---
+
+### ✅ 3. **Add UI for Index Management and Querying**
+
+**Goal:** Make the tool user-friendly for non-technical users.
+
+* Build a Streamlit or Gradio interface for:
+
+  * Uploading documents
+  * Creating/deleting vector indexes
+  * Semantic querying with context display
+  * Switching between local models
+* Add dropdown for selecting models and chat personalities.
+
+---
+
+### ✅ 4. **Enable Hybrid Search (Vector + Keyword)**
+
+**Goal:** Combine the power of semantic similarity with keyword matching.
+
+* Fuse dense vector search (e.g., via `FAISS`) with sparse keyword search (e.g., `BM25` via `Whoosh` or `ElasticSearch`).
+* Implement reranking of top results using LLM-based relevance scoring (e.g., using `rerank` from `LangChain` or `Cohere`).
+
+---
+
+### ✅ 5. **Add Incremental Index Updates**
+
+**Goal:** Avoid full reindexing when only a few documents are added or updated.
+
+* Detect modified or new documents via checksums or timestamps.
+* Update only the changed embeddings and metadata in the vector store.
+* Provide a CLI or button to trigger incremental updates.
+
+---
+
+Would you like this turned into a GitHub issue template or roadmap file too?
